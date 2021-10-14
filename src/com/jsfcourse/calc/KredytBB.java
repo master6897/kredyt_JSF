@@ -11,34 +11,34 @@ import javax.faces.context.FacesContext;
 @RequestScoped
 //@SessionScoped
 public class KredytBB {
-	private String kwota;
-	private String lat;
-	private String oprocentowanie;
+	private Double kwota;
+	private Double lat;
+	private Double oprocentowanie;
 	private Double rata;
 	@Inject
 	FacesContext ctx;
 	
-	public String getKwota() {
+	public Double getKwota() {
 		return kwota;
 	}
 
-	public void setKwota(String kwota) {
+	public void setKwota(Double kwota) {
 		this.kwota = kwota;
 	}
 
-	public String getLat() {
+	public Double getLat() {
 		return lat;
 	}
 
-	public void setLat(String lat) {
+	public void setLat(Double lat) {
 		this.lat = lat;
 	}
 
-	public String getOprocentowanie() {
+	public Double getOprocentowanie() {
 		return oprocentowanie;
 	}
 
-	public void setOprocentowanie(String oprocentowanie) {
+	public void setOprocentowanie(Double oprocentowanie) {
 		this.oprocentowanie = oprocentowanie;
 	}
 
@@ -52,10 +52,6 @@ public class KredytBB {
 
 	public boolean doTheMath() {
 		try {
-			double kwota = Double.parseDouble(this.kwota);
-			double lat = Double.parseDouble(this.lat);
-			double oprocentowanie = Double.parseDouble(this.oprocentowanie);
-
 			rata = (kwota + (kwota*(oprocentowanie/100)))/(lat*12);
 
 			ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Operacja wykonana poprawnie", null));

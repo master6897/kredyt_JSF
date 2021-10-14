@@ -14,15 +14,27 @@
 	<h:form id="bla">
 		<h:panelGrid id="grid" columns="3" cellpadding="5">
 			<p:outputLabel for="kwota" value="Kwota" />
-	  		<p:inputNumber id="kwota" value="#{kredytBB.kwota}" required="true" requiredMessage="Proszę podać kwotę" />
+	  		<p:inputNumber id="kwota" value="#{kredytBB.kwota}" required="true" 
+	  		requiredMessage="Proszę podać kwotę"
+	  		validatorMessage="Kwota powinna znajdować się w przedziale od: 1000 do: 10000000">
+	  			<f:validateDoubleRange minimum="1000" maximum="10000000"/>
+	  		</p:inputNumber>
 	  		<p:message for="kwota" />
 	  		
 	  		<p:outputLabel for="lat" value="Lata" />
-	  		<p:inputNumber id="lat" value="#{kredytBB.lat}" required="true" requiredMessage="Proszę podać na ile lat"/>
+	  		<p:inputNumber id="lat" value="#{kredytBB.lat}" required="true" 
+	  		requiredMessage="Proszę podać na ile lat"
+	  		validatorMessage="Minimalna ilość lat wynosi: 1, maksymalna: 70">
+	  			<f:validateDoubleRange minimum="1" maximum="70"/>
+	  		</p:inputNumber>
 	  		<p:message for="lat" />
 	  		
 	  		<p:outputLabel for="oprocentowanie" value="Oprocentowanie" />
-			<p:inputNumber id="oprocentowanie" value="#{kredytBB.oprocentowanie}" required="true" requiredMessage="Proszę podać oprocentowanie" />
+			<p:inputNumber id="oprocentowanie" value="#{kredytBB.oprocentowanie}" required="true" 
+			requiredMessage="Proszę podać oprocentowanie"
+			validatorMessage="Minimalne oprocentowanie wynosi: 0,1, maksymalne: 100%">
+				<f:validateDoubleRange minimum="0.1" maximum="100"/>
+			</p:inputNumber>
 			<p:message for="oprocentowanie" />
 	
 			<p:commandButton value="Oblicz" action="#{kredytBB.calc()}" update="@form"/>

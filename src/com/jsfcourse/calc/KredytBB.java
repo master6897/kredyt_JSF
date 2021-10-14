@@ -15,7 +15,6 @@ public class KredytBB {
 	private String lat;
 	private String oprocentowanie;
 	private Double rata;
-
 	@Inject
 	FacesContext ctx;
 	

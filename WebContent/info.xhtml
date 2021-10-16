@@ -5,14 +5,20 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:p="http://primefaces.org/ui">
-<h:head>
-<title>Informacje</title>
-</h:head>
-<h:body>
-<h1 >Informacje</h1>
-
-<h:form>
-<h:commandLink value="Strona główna" action="index"/>
-</h:form>
-
-</h:body></html>
+      
+<ui:composition template="/templates/main-template.xhtml">
+	<ui:define name="title">
+		Kalkulator Kredytowy - Informacje
+	</ui:define>
+	
+	<ui:define name="content">
+		<p:panel styleClass="bottom-space">
+			<h:graphicImage name="img/java.png" library="template" />
+			Pusta strona przykładowa...
+			<h:form>
+				<p:commandButton value="Strona główna" styleClass="rounded-button" action="index"/>
+			</h:form>
+		</p:panel>
+	</ui:define>
+</ui:composition>
+</html>

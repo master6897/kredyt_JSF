@@ -10,7 +10,14 @@
 </h:head>
 <h:body>
 	<p:messages />
-	wynik: #{kredytBB.rata}
+	<p:card style="width: 25rem; margin-bottom: 2em">
+	    <f:facet name="title">
+	        Twoja rata kredytu
+	    </f:facet>
+	
+	    <p>wynik: #{kredytBB.rata}!</p>
+
+	</p:card>
 	<h:form>
 		<p:commandButton value="Powrót" action="index" />
 	</h:form>

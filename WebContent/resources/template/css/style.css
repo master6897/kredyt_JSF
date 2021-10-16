@@ -1,0 +1,21 @@
+body{
+	font-family: 'Century Gothic',helvetica,verdana,arial;
+	background: rgb(19,13,1);
+	background: linear-gradient(207deg, rgba(19,13,1,1) 0%, rgba(164,34,191,1) 55%, rgba(255,0,76,1) 100%);
+	background-size: cover;
+	margin:0;
+	height: 100vh;
+}
+
+.bottom-space{
+	margin-bottom: 1em;
+}
+
+.top-space{
+	margin-top: 1em;
+}
+
+#page_wrapper{
+	margin: 1em;
+	min-width: 700px;
+}
